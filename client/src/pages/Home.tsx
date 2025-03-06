@@ -21,16 +21,10 @@ const Home = () => {
   useEffect(() => {
     const timeOutId = setTimeout(async () => {
      
-     
-        if (!query) {
-           toast.error("Query must be provided")
-           return
-          }
           if (typeof query !== "string") {
             toast.error("Query must be a string")
             return
            }
- 
 
       if (query) {
         try {
@@ -39,7 +33,7 @@ const Home = () => {
           const response = await fetchMovies(query);
           if(response){
             const movieData = response.data;
-
+console.log(movieData)
             if (movieData.length === 0) {
               setMovies([]);
               toast.error("No search results found 😞");

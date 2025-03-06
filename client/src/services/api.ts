@@ -2,8 +2,8 @@ import axios from "axios";
 import { Movie } from "../pages/Home";
 import toast from "react-hot-toast";
 
-// const base_url = import.meta.env.VITE_BASE_URL
-const base_url = "http://localhost:3000/api/movies";
+const base_url = import.meta.env.VITE_BASE_URL
+// const base_url = "http://localhost:3000/api/movies";
 export const fetchMovies = async (search: string) => {
   try {
     const response = await axios.get(`${base_url}/search?query=${search}`);
